@@ -1,8 +1,11 @@
-b=(input('enter a string: '))
-def most_frequent(a):
-    b=set(a)
-    for i in b:
-        print(i,'= '+str(a.count(i)))
-
-
-most_frequent(b)
+def most_frequency(str1):
+    dict = {}
+    for n in str1:
+        keys = dict.keys()
+        if n in keys:
+            dict[n] += 1
+        else:
+            dict[n] = 1
+    dict=sorted(dict.items(), key=lambda kv: kv[1],reverse=True)
+    return dict
+print(most_frequency(input("enter a string: ")))
